@@ -70,16 +70,26 @@ public class Ranking extends JPanel {
     private void displayRankings(List<RankingEntry> rankings) {
         String[] columnNames = {"Rank", "Name", "Score"};
         String[][] data = new String[rankings.size()][3];
-        for (int i = 0; i < rankings.size(); i++) {
-            RankingEntry entry = rankings.get(i);
-            data[i][0] = String.valueOf(i + 1);
-            data[i][1] = entry.name;
-            data[i][2] = String.valueOf(entry.score);
+        
+        int rank = 1;
+        int displayRank = 1;
+        data[0][0] = String.valueOf(displayRank); 
+        data[0][1] = rankings.get(0).name;
+        data[0][2] = String.valueOf(rankings.get(0).score);
+
+        for (int i = 1; i < rankings.size(); i++) { 
+            if (rankings.get(i).score != rankings.get(i - 1).score) {
+                rank = i + 1;
+                displayRank = rank;
+            }
+            data[i][0] = String.valueOf(displayRank);
+            data[i][1] = rankings.get(i).name;
+            data[i][2] = String.valueOf(rankings.get(i).score);
         }
 
         JTable rankingTable = new JTable(data, columnNames);
         JScrollPane scrollPane = new JScrollPane(rankingTable);
-        scrollPane.setBounds(30, 30, 400, 300); // 수정6: 위치 조정
+        scrollPane.setBounds(30, 30, 400, 300); 
         this.add(scrollPane);
     }
 
