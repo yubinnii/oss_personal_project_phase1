@@ -133,7 +133,7 @@ public class MainGame extends JPanel {
     private void updateScore() {
         List<Vegetable> vegetablesToRemove = new ArrayList<>();
         for (Vegetable vegetable : vegetables) {
-            if (vegetable.getY() > 600) {
+            if (vegetable.getY() > 400) {
                 vegetablesToRemove.add(vegetable);
                 score++; 
             }
