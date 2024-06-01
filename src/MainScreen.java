@@ -44,7 +44,7 @@ public class MainScreen extends JPanel {
         viewRankingButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // 랭킹
+            	viewRanking();
             }
         });
         buttonPanel.add(viewRankingButton);
@@ -62,5 +62,13 @@ public class MainScreen extends JPanel {
         parentFrame.repaint();
         gamePanel.requestFocusInWindow();
         gamePanel.startGame();
+    }
+    
+    private void viewRanking() {
+        Ranking rankingScreen = new Ranking(parentFrame); 
+        parentFrame.getContentPane().removeAll();
+        parentFrame.add(rankingScreen);
+        parentFrame.revalidate();
+        parentFrame.repaint();
     }
 }

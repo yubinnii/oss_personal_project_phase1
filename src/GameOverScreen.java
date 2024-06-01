@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter; 
+import java.io.IOException; 
 
 public class GameOverScreen extends JPanel {
     private JFrame parentFrame;
@@ -14,7 +17,7 @@ public class GameOverScreen extends JPanel {
 
         // Add vomit image
         JLabel vomitImage = new JLabel(new ImageIcon("image/vomitdog.png"));
-        vomitImage.setBounds(100, 30, vomitImage.getPreferredSize().width, vomitImage.getPreferredSize().height); // 수정4: 위치 조정
+        vomitImage.setBounds(100, 30, vomitImage.getPreferredSize().width, vomitImage.getPreferredSize().height);
         this.add(vomitImage);
 
         // Add score label
@@ -45,14 +48,14 @@ public class GameOverScreen extends JPanel {
         rankingButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // 랭킹 등록 기능
+            	gotoRankingInput();
             }
         });
         this.add(rankingButton);
 
         // Add go start button
         JButton goStartButton = new JButton(new ImageIcon("image/gostart1.png"));
-        goStartButton.setBounds(430, 230, 100, 100); // 수정4: 위치 조정
+        goStartButton.setBounds(430, 230, 100, 100); 
         goStartButton.setBorderPainted(false);
         goStartButton.setContentAreaFilled(false);
         goStartButton.addActionListener(new ActionListener() {
@@ -66,7 +69,7 @@ public class GameOverScreen extends JPanel {
 
     // Method to start the game again
     private void startGame() {
-        MainGame gamePanel = new MainGame(parentFrame); // 수정4: 게임 다시 시작
+        MainGame gamePanel = new MainGame(parentFrame); 
         parentFrame.getContentPane().removeAll();
         parentFrame.add(gamePanel);
         parentFrame.revalidate();
@@ -77,9 +80,18 @@ public class GameOverScreen extends JPanel {
 
     // Method to go to the main screen
     private void goToMainScreen() {
-        MainScreen mainScreen = new MainScreen(parentFrame); // 수정4: 메인 화면으로 이동
+        MainScreen mainScreen = new MainScreen(parentFrame); 
         parentFrame.getContentPane().removeAll();
         parentFrame.add(mainScreen);
+        parentFrame.revalidate();
+        parentFrame.repaint();
+    }
+    
+    // Method to go to Ranking Input page
+    private void gotoRankingInput() {
+        RankingInput rankingInputPage = new RankingInput(parentFrame, score); 
+        parentFrame.getContentPane().removeAll();
+        parentFrame.add(rankingInputPage);
         parentFrame.revalidate();
         parentFrame.repaint();
     }
