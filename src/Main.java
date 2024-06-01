@@ -2,6 +2,7 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
+    	// Create the main JFrame window
         JFrame frame = new JFrame("Avoid Vegetables!");
         MainScreen mainScreen = new MainScreen(frame);
 

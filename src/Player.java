@@ -14,12 +14,14 @@ public class Player {
         this.image = new ImageIcon(imagePath);
     }
 
+    // Method to move the player left and right
     public void move() {
         x += dx;
         if (x < 0) x = 0;
         if (x > 750) x = 750;
     }
 
+    // Key pressed event to move the player
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         if (key == KeyEvent.VK_LEFT) {
@@ -30,6 +32,7 @@ public class Player {
         }
     }
 
+    // Key released event to stop the player's movement
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
         if (key == KeyEvent.VK_LEFT || key == KeyEvent.VK_RIGHT) {
@@ -37,10 +40,12 @@ public class Player {
         }
     }
 
+    // Get the player's bounds for collision detection
     public Rectangle getBounds() {
         return new Rectangle(x, y, image.getIconWidth(), image.getIconHeight());
     }
 
+    // Draw the player on the screen
     public void draw(Graphics g) {
         g.drawImage(image.getImage(), x, y, null);
     }
