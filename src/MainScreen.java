@@ -55,7 +55,7 @@ public class MainScreen extends JPanel {
     
     // Method to start the game
     private void startGame() {
-        MainGame gamePanel = new MainGame();
+        MainGame gamePanel = new MainGame(parentFrame);
         parentFrame.getContentPane().removeAll();
         parentFrame.add(gamePanel);
         parentFrame.revalidate();
