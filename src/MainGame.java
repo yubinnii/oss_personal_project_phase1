@@ -14,11 +14,10 @@ public class MainGame extends JPanel {
     private List<Vegetable> vegetables;
     private Timer timer;
     private Random random;
-    private ImageIcon[] Vegetable_img; 
-
+    private ImageIcon[] Vegetable_img;
 
     public MainGame() {
-        player = new Player(375, 470,"image/character.png");
+        player = new Player(375, 470, "image/character.png");
         vegetables = new ArrayList<>();
         random = new Random();
         Vegetable_img = new ImageIcon[] {
@@ -27,7 +26,7 @@ public class MainGame extends JPanel {
                 new ImageIcon("image/onion.png"),
                 new ImageIcon("image/pa.png"),
                 new ImageIcon("image/tomato.png")
-            };
+        };
 
         this.setFocusable(true);
         this.addKeyListener(new KeyAdapter() {
@@ -63,8 +62,8 @@ public class MainGame extends JPanel {
     }
 
     private void CreateVegetable() {
-        if (random.nextInt(100) < 8) { 
-            ImageIcon VegImage = Vegetable_img[random.nextInt(Vegetable_img.length)]; 
+        if (random.nextInt(100) < 8) {
+            ImageIcon VegImage = Vegetable_img[random.nextInt(Vegetable_img.length)];
             vegetables.add(new Vegetable(random.nextInt(800), 0, VegImage));
         }
     }
@@ -79,7 +78,7 @@ public class MainGame extends JPanel {
         for (Vegetable vegetable : vegetables) {
             if (vegetable.getBounds().intersects(player.getBounds())) {
                 timer.stop();
-                JOptionPane.showMessageDialog(this, "Game Over!");
+                System.out.println("Game Over!");
             }
         }
     }

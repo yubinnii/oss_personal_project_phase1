@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
@@ -8,7 +7,7 @@ public class Player {
     private int x, y;
     private int dx;
     private ImageIcon image;
-    
+
     public Player(int x, int y, String imagePath) {
         this.x = x;
         this.y = y;
@@ -43,6 +42,6 @@ public class Player {
     }
 
     public void draw(Graphics g) {
-    	g.drawImage(image.getImage(), x, y, null);
+        g.drawImage(image.getImage(), x, y, null);
     }
 }

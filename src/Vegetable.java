@@ -1,11 +1,9 @@
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import javax.swing.*;
 
 public class Vegetable {
     private int x, y;
-    private final int width = 30, height = 30;
     private final int dy = 10;
     private ImageIcon image;
 
@@ -24,6 +22,6 @@ public class Vegetable {
     }
 
     public void draw(Graphics g) {
-    	g.drawImage(image.getImage(), x, y , null);
+        g.drawImage(image.getImage(), x, y, null);
     }
 }
