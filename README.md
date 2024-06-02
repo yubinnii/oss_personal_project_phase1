@@ -1,21 +1,29 @@
 # Reference
 똥왕의 분노 ( https://play.google.com/store/apps/details?id=com.nflygame.ddongpi&hl=ko&gl=US&pli=1 )
 
-# 지원 Operating Systems 및 실행 방법
-
 ## 지원 Operating Systems
-
+|OS| 지원 여부 |
+|-----|--------|
+|windows | :o:  |
+| Linux  | :o: |
+|MacOS  | :o:  |
 
 ## 실행 방법
-### Windows
-
-
-
-### Linux
-
-
-
-### MacOS
+1. 자바 개발 키트(Java Development Kit, JDK)를 설치한다
+```
+https://www.oracle.com/java/technologies/downloads/#jdk22-windows
+에서 본인의 OS에 해당하는 파일 다운로드
+```
+2. 환경변수 등록
+```
+1. 명령 프롬프트를 관리자 권한으로 실행
+2. setx SystemPath "{JDK 설치 경로}\jdk-22\bin" -m 명령어 실행
+```
+3. 게임 실행
+```
+다운로드 받은 디렉토리에서
+java -classpath ./bin;./image Main
+```
 
 # 실행 예시
 ![escapeveg-ezgif com-video-to-gif-converter](https://github.com/yubinnii/oss_personal_project_phase1/assets/157782716/3ac0c3fa-a441-4296-9c5c-fbdddeecd393)
