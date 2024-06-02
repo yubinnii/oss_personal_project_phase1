@@ -21,8 +21,8 @@ https://www.oracle.com/java/technologies/downloads/#jdk22-windows
 ```
 3. 게임 실행
 ```
-다운로드 받은 디렉토리에서
-java -classpath ./bin;./image Main
+명령 프롬프트로 다운로드 받은 디렉토리에 접근한 후
+java -classpath ./bin;./image Main 명령어 실행
 ```
 
 # 실행 예시
